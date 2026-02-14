@@ -38,8 +38,7 @@ class AutoContextManager:
                         "created_at": datetime.now().isoformat(),
                         "last_active": datetime.now().isoformat()
                     }
-                }
-            },
+                },
                 "current_project": "default"
             }
 
@@ -128,8 +127,8 @@ class AutoContextManager:
         output.append("=" * 50)
 
         for proj_id, proj_data in projects["projects"].items():
-            marker = "▶" if proj_id == current else "  "
-            output.append(f"{marker} {proj_id}")
+            marker = "* " if proj_id == current else "  "
+            output.append(f"{marker}{proj_id}")
             output.append(f"   Name: {proj_data['name']}")
             output.append(f"   Keywords: {', '.join(proj_data.get('keywords', [])[:3])}...")
             output.append("")
